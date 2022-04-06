@@ -2,7 +2,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 body{
-    margin: 0;
+    margin: 0; /*Default setting */
     background-color: rgb(248, 246, 246);
 }
 @media only screen and (max-width:480px){
@@ -15,31 +15,41 @@ header{
     justify-content: space-between;
     padding: 0 8em;
     box-shadow: 0 3px 4px rgba(0, 0,0,0.1);
-    background-color: white;
+    background-color:orange;
     position:sticky;
+
     /* *used to position the header at the top of the website */  
     top:0;
     z-index: 10;
     /* *to keep the element in front*/
 }
-
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 .tabs li{
+    text-decoration: none;
     list-style: none; /**to remove the dots from the list*/
     font-size: 1.2em; 
     cursor: pointer;/**change the cursor to a pointer*/
+}
+.tabs a{
+    text-decoration: none;
 }
 
 .tabs{
     align-self: center; /**to center them vertically*/
     display: flex;
     justify-content: space-between; /**keep space in between the lis*/
-    width: 40%;/**elements sticks together so increase the distance between them*/
-    color: blueviolet;
+    width: 20%;/**elements sticks together so increase the distance between them*/
+    color:blueviolet;
 }
 
 header .name{
-    color:purple;
+    color:blueviolet;
     text-transform: uppercase;
 }
 
@@ -59,6 +69,7 @@ header .name{
     }
     
 }
+
 .page{
     margin-top: 6em;
     margin-left: 12em;
@@ -72,8 +83,9 @@ header .name{
     width: 30em;
 }
 .profilePic{
-    
-    margin-left: 4em;
+    position:relative;
+    top: -120px;
+    margin-left: 140px;
     opacity: 80%;
     border-radius: 4em;
     object-fit:initial;
@@ -91,7 +103,10 @@ header .name{
 
 
 .profile button{
-    margin-top: 4em;
+    position: relative;
+    top: 20px;
+    margin-top: 40px;
+    font-size: 20px;
     border: none;
     background-color: blue;
     color: white;
@@ -107,6 +122,7 @@ header .name{
     transition: all;
     transition-timing-function: ease-in;
     transition-duration: 200ms;
+
 }
 
 .profile button:hover{
@@ -131,7 +147,8 @@ header .name{
         padding: 0 0.5em;
     }
     .profilePic{
-       align-self:center;
+        position: relative;
+        top: 55px;
         margin-left: 0;
     }
     .profilePic:hover{
@@ -161,24 +178,13 @@ header .name{
     }
 }
 .logos{
-    margin-top: 5em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0 4em;
+    position: relative;
 }
 
-.logos img{
-    
-    height: 200px;
-    width: 200px;
-    object-fit: contain;
-    background-color: white;
-    padding: 1em;
-    border-radius: 1em;
-    margin: auto;
-    box-shadow: 6px 12px 12px  rgba(0,0,0,0.1);
-}
-.skills h1, .projects h1{
+
+.about h1, .projects h1{
+    position: relative;
+    top: 10px;
     font-size: 2.5em;
     background-image: linear-gradient(45deg, blue, purple);
     width:fit-content;
@@ -190,104 +196,23 @@ header .name{
     -moz-text-fill-color: transparent;
 
 }
-@media only screen and (max-width:1440px){
-    .logos{
-        padding: 0;
-    }
-    .logos img{
-        height: 180px;
-        width: 180px;
-    }
-}
-@media only screen and (max-width:1201px){
-    .logos{
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 4em;
-    }
-}
 
-@media only screen and (max-width:769px){
-    
-    .logos{
-        grid-template-columns: 1fr 1fr ;
-        width: fit-content;   
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.projects img{
-    height: 500px;
-    width: 450px;
-    object-fit: cover;
-}
-
-.projectCards{
-    display: grid;
-    grid-template-columns: min-content min-content;
-    margin-top: 4em;
-    margin-left: auto;
-    margin-right:auto;
-    width: fit-content;
-    gap: 2em;
-}
-.projects h5{
-    color: gray;
-}
-.projects h3{
-    font-size: 2em;
-    margin: 0;
-}
-
-
-.projects .description{
-    color: gray;
-    padding: 0;
-    font-weight: 200;
-}
-.projects button{
-    padding: 1em;
-    border: 1px solid purple;
-    cursor: pointer;
-    color: purple;
-}
-
-.projects button:hover{
-    background-color: #653abd;
-    color: white;
-    border-color: #653abd;
-    transition: all;
-    transition-delay: 100ms;
-    transition-duration: 300ms;
-    transition-timing-function: ease-out;
-}
-@media only screen and (max-width:1024px){
-    .projects img{
-        width: 45vw;
-    }
-}
-@media only screen and (max-width:769px){
-    .projectCards{
-        grid-template-columns: max-content;
-    }
-    .projects .description{
-        width: 75vw;
-    }
-    .projects img{
-        width: 75vw;
-    }
-}
 
 .contact{
+    position: relative;
+    top: -100px;
     margin-top: 4em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .contact h2{
+    position:relative;
+    top:40px;
     font-size: 2em;
     margin-bottom: 2em;
 }
+
 
 .contactForm form{
     display:flex;
@@ -304,19 +229,19 @@ header .name{
     border: none;
 }
 
-.submit-btn{
+submit-btn{
     margin-top: 1em;
     background-color: #653abd;
     color:white;
     border:none;
 }
 @media only screen and (max-width: 769px){
-    .contactForm form{
+    contactForm form{
         width: 70vw;
     }
 } 
 
-.popup{
+popup{
     display: none;
     position: fixed;
     top: 0;
@@ -331,54 +256,17 @@ header .name{
     align-items: center;
     justify-content: center;
 }
-.popup .prj{
-    
-    background-color: white;
-    width: 90%;
-    height: 90%;
-}
-.arrowIcon{
-    position:fixed;
-    bottom: 3em;
-    right: 3em;
-    border-radius: 50%;
-    background-color:transparent;
-    cursor: pointer;
-    background-color: white;
-    box-shadow: 0 4px 5px rgb(0,0,0,.2);
-    
-}
-.social-media-icons{
-    align-self: center;
-    position:fixed;
-    bottom: 6em;
-    right: 3em;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    padding: 0.5em;
-    height: 0;
-   
-    overflow: hidden;
-    border-radius: 1.5em;
-    transition: all;
-    transition-delay: 100ms;
-    transition-duration:250ms;
-    transition-timing-function: ease-in;
-    
-}
+.contact-1 h1, .projects h1{
+    position: relative;
+    top: 20px;
+    font-size: 2.5em;
+    background-image: linear-gradient(45deg, blue, purple);
+    width:fit-content;
+    background-clip:text;
+    color:transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 
-.social-media-icons img{
-    box-shadow: 0 4px 5px rgb(0,0,0,.2);
-    border-radius: 0.2em;
-    margin-top: 1em;
-    padding: 0.2em;
-    background-color: white;
-}
-.closeIcon{
-    position:fixed;
-    bottom:3em;
-    right: 3.6em;
-    display: none;
-    cursor: pointer;
 }
